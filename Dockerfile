@@ -7,5 +7,5 @@ WORKDIR /build
 COPY . /build
 RUN zig build
 
-FROM scratch
+FROM scratch AS output
 COPY --from=compiler /build/zig-out/bin /bin

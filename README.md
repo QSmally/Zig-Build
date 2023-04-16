@@ -12,9 +12,9 @@ A compose file may look something like the following, running it with `$ docker 
 ```yml
 application:
   restart: always
-  image: qsmally/zig-build
+  build: . # Dockerfile, build.zig, Sources/
   container_name: application
-  entrypoint: /bin/mybuildexecutable
+  entrypoint: /bin/executable
 ```
 
 `build.zig`:
@@ -23,7 +23,8 @@ application:
 const std = @import("std");
 
 pub fn build(b: *std.build.Builder) void {
-    const e = b.addExecutable("mybuildexecutable", "<main file>.zig");
+    const e = b.addExecutable("executable", "Sources/main.zig");
+    // ... build options
     e.install();
 }
 ```
