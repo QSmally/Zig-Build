@@ -1,7 +1,7 @@
 
 FROM alpine AS compiler
 
-ARG VERSION=0.10.1
+ARG VERSION=0.11.0
 ARG PLATFORM=linux
 ARG OPTIONS=-Drelease-safe
 

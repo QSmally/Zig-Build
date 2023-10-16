@@ -4,7 +4,7 @@
 Image to compile and run Zig.
 
 A `scratch` image containing the output binary of `zig build` from a multi-stage build. A couple of
-build args may be supplied to adjust the compilation process by the image; `VERSION` (`0.10.1`
+build args may be supplied to adjust the compilation process by the image; `VERSION` (`0.11.0`
 default), `PLATFORM` (`linux` default), `OPTIONS` (`-Drelease-safe` default).
 
 ## Usage
