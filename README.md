@@ -9,7 +9,7 @@ default), `PLATFORM` (`linux` default), `OPTIONS` (`-Drelease-safe` default).
 
 ## Usage
 
-A compose file may look something like the following, running it with `$ docker compose up`.
+A compose service may look something like the following, running it with `$ docker compose up`.
 
 ```yml
 application:
@@ -25,8 +25,8 @@ application:
 const std = @import("std");
 
 pub fn build(b: *std.build.Builder) void {
-    const e = b.addExecutable("executable", "Sources/main.zig");
+    const e = b.addExecutable(.{ .name = "executable" });
     // ... build options
-    e.install();
+    b.installArtifact(e);
 }
 ```
