@@ -3,7 +3,7 @@ FROM alpine AS compiler
 
 ARG VERSION=0.11.0
 ARG PLATFORM=linux
-ARG OPTIONS=-Drelease-safe
+ARG OPTIONS=-Doptimize=ReleaseSafe
 
 RUN apk update && apk add curl tar xz
 
