@@ -34,7 +34,7 @@ Below compiles an image for `linux/amd64` with a `x86_64-linux-musl` (static) bi
 $ platform="linux/amd64"
 $ options="-Doptimize=ReleaseSafe -Dtarget=x86_64-linux-musl"
 $ docker build \
-    --build-arg "BUILDTARGET=$platform" \
+    --build-arg "TARGETPLATFORM=$platform" \
     --build-arg "OPTIONS=$options" \
     -t application .
 ```
