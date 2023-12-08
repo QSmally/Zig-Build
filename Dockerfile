@@ -2,13 +2,12 @@
 FROM alpine AS compiler
 
 ARG VERSION=0.11.0
-ARG PLATFORM=linux
 ARG OPTIONS=-Doptimize=ReleaseSafe
 
 RUN apk update && apk add curl tar xz
 
 # zig-linux-aarch64-0.10.1.tar.xz
-# ziglang.org/download/<ver>/zig-<linux>-<architecture>-<ver>.tar.xz
+# ziglang.org/download/<ver>/zig-linux-<architecture>-<ver>.tar.xz
 
 RUN curl https://ziglang.org/download/$VERSION/zig-$PLATFORM-$(uname -m)-$VERSION.tar.xz -O && \
     tar -xf *.tar.xz && \
@@ -18,5 +17,5 @@ WORKDIR /build
 COPY . /build
 RUN /compiler/zig build $OPTIONS
 
-FROM scratch AS output
+FROM alpine AS output
 COPY --from=compiler /build/zig-out/bin /bin
