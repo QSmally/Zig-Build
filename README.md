@@ -4,7 +4,7 @@
 Image to compile and run Zig.
 
 A `scratch` image containing the output binary of `zig build` from a multi-stage build. A couple of
-build args may be supplied to adjust the compilation process by the image; `VERSION` (`0.11.0`
+build args may be supplied to adjust the compilation process by the image; `VERSION` (`0.13.0`
 default), `OPTIONS` (`-Doptimize=ReleaseSafe` default). This image is perfect for statically
 compiled Zig binaries without any system dependencies.
 
@@ -14,11 +14,11 @@ A compose service may look something like the following, running it with `$ dock
 
 ```yml
 services:
-    application:
-      restart: always
-      build: . # Dockerfile, build.zig, Sources/
-      container_name: application
-      entrypoint: /bin/<executable>
+  application:
+    restart: always
+    build: . # Dockerfile, build.zig, Sources/
+    container_name: application
+    entrypoint: /bin/<executable>
 ```
 
 ## Cross-compilation
