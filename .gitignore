@@ -5,3 +5,7 @@
 # File editor
 Session.vim
 *.swp
+
+# Test
+build.zig
+main.zig
