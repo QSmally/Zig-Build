@@ -3,8 +3,10 @@
 
 Image to compile and run Zig.
 
+This image uses the Zig mirror [mirrors.qsmally.org/zig](https://mirrors.qsmally.org).
+
 A `scratch` image containing the output binary of `zig build` from a multi-stage build. A couple of
-build args may be supplied to adjust the compilation process by the image; `VERSION` (`0.13.0`
+build args may be supplied to adjust the compilation process by the image; `VERSION` (`0.16.0`
 default), `OPTIONS` (`-Doptimize=ReleaseSafe` default). This image is perfect for statically
 compiled Zig binaries without any system dependencies.
 
